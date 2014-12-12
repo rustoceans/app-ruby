@@ -27,7 +27,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
 
 # To use ActiveModel has_secure_password
-gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'bcrypt-ruby', '~> 3.1.0'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
