@@ -1,42 +1,43 @@
 <% if @user.errors.any? %>
-	<div id="error_explanation">
-		<h2>
-			Unfortunately if was impossible to complete as follows errors:
-		</h2>
+	<div class="panel-body">
+	<div class="alert alert-danger">
+		<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+		<strong>Unfortunately if was impossible to complete as follows errors:</strong>
 		<ul>
 			<% @user.errors.full_messages.each do |message| %>
 			<li><%= message %></li>
 			<% end %>
 		</ul>
 	</div>
+	</div>
 <% end %>
 
-<%= form_for @user do |f| %>
-<p>
-<%= f.label :full_name %> <br />
-<%= f.text_field :full_name %>
-</p>
-<p>
-<%= f.label :location %> <br />
-<%= f.text_field :location %>
-</p>
-<p>
-<%= f.label :email %> <br />
-<%= f.text_field :email %>
-</p>
-<p>
-<%= f.label :password %> <br />
-<%= f.password_field :password %>
-</p>
-<p>
-<%= f.label :password_confirmation %> <br />
-<%= f.password_field :password_confirmation %>
-</p>
-<p>
-<%= f.label :bio %> <br />
-<%= f.text_area :bio %>
-</p>
-<p>
-<%= f.submit %>
-</p>
-<% end %>
+
+                    <div class="panel-body">
+                        <%= form_for @user do |f| %>
+                            <fieldset>
+                            	<div class="form-group">
+                                    <%= f.text_field :full_name, :class => 'form-control', :placeholder => 'Full name' %>
+                                </div>
+                                <div class="form-group">
+                                    <%= f.text_field :location, :class => 'form-control', :placeholder => 'Location' %>
+                                </div>
+                                <div class="form-group">
+                                    <%= f.email_field :email, :class => 'form-control', :placeholder => 'E-mail' %>
+                                </div>
+                                <div class="form-group">
+                                    <%= f.password_field :password, :class => 'form-control', :placeholder => 'Password' %>
+                                </div>
+                                <div class="form-group">
+                                	<%= f.password_field :password_confirmation, :class => 'form-control', :placeholder => 'Password Confirmation' %>
+                                </div>
+                                <div class="form-group">
+                                	<%= f.text_area :bio, :class => 'form-control', :placeholder => 'Bio' %>
+                                </div>
+
+                                <!-- Change this to a button or input when using this as a form -->
+                                <%= f.submit "Register", :class => 'btn btn-sm btn-success' %>
+                            </fieldset>
+                        <% end %>
+                    </div>
+                
