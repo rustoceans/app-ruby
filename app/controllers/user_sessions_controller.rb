@@ -13,27 +13,8 @@ class UserSessionsController < ApplicationController
 	end
 
 	def destroy
-		# do something...
+		user_session.destroy
+		redirect_to root_path, notice: 'Logout successfully. See you!'
 	end
-
-	# def initialize(session, attributes={})
-	# 	@session = session
-	# 	@email = attributes[:email]
-	# 	@password = attributes[:password]
-	# end
-
-	# def authenticate!
-	# 	user = User.authenticate(@email, @password)
-	# 	if user.present?
-	# 		store(user)
-	# 	else
-	# 		errors.add(:base, :invalid_login)
-	# 		false
-	# 	end
-	# end
-
-	# def strore(user)
-	# 	@session[:user_id] = user.id
-	# end
 
 end
