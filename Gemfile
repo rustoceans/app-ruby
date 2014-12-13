@@ -9,6 +9,9 @@ gem 'rails', '4.1.8'
 # PostgreeSQL for deploy to Heroku
 gem 'pg'
 
+# i18n
+gem 'rails-i18n'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
