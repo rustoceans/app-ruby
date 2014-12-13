@@ -12,32 +12,31 @@
 	</div>
 <% end %>
 
+<div class="panel-body">
+    <%= form_for @user do |f| %>
+        <fieldset>
+        	<div class="form-group">
+                <%= f.text_field :full_name, :class => 'form-control', :placeholder => 'Full name' %>
+            </div>
+            <div class="form-group">
+                <%= f.text_field :location, :class => 'form-control', :placeholder => 'Location' %>
+            </div>
+            <div class="form-group">
+                <%= f.email_field :email, :class => 'form-control', :placeholder => 'E-mail' %>
+            </div>
+            <div class="form-group">
+                <%= f.password_field :password, :class => 'form-control', :placeholder => 'Password' %>
+            </div>
+            <div class="form-group">
+            	<%= f.password_field :password_confirmation, :class => 'form-control', :placeholder => 'Password Confirmation' %>
+            </div>
+            <div class="form-group">
+            	<%= f.text_area :bio, :class => 'form-control', :placeholder => 'Bio' %>
+            </div>
 
-                    <div class="panel-body">
-                        <%= form_for @user do |f| %>
-                            <fieldset>
-                            	<div class="form-group">
-                                    <%= f.text_field :full_name, :class => 'form-control', :placeholder => 'Full name' %>
-                                </div>
-                                <div class="form-group">
-                                    <%= f.text_field :location, :class => 'form-control', :placeholder => 'Location' %>
-                                </div>
-                                <div class="form-group">
-                                    <%= f.email_field :email, :class => 'form-control', :placeholder => 'E-mail' %>
-                                </div>
-                                <div class="form-group">
-                                    <%= f.password_field :password, :class => 'form-control', :placeholder => 'Password' %>
-                                </div>
-                                <div class="form-group">
-                                	<%= f.password_field :password_confirmation, :class => 'form-control', :placeholder => 'Password Confirmation' %>
-                                </div>
-                                <div class="form-group">
-                                	<%= f.text_area :bio, :class => 'form-control', :placeholder => 'Bio' %>
-                                </div>
-
-                                <!-- Change this to a button or input when using this as a form -->
-                                <%= f.submit "Register", :class => 'btn btn-sm btn-success' %>
-                            </fieldset>
-                        <% end %>
-                    </div>
-                
+            <!-- Change this to a button or input when using this as a form -->
+            <%= f.submit "Register", :class => 'btn btn-sm btn-success' %>
+            <a class="btn btn-sm btn-info" href="<%= new_user_session_path %>">Sign Up</a>
+        </fieldset>
+    <% end %>
+</div>
