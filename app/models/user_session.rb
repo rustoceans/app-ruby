@@ -1,39 +1,43 @@
 class UserSession
-	include ActiveModel::Model
+    include ActiveModel::Model
 
-	attr_accessor :email, :password
-	validates_presence_of :email, :password
+    attr_accessor :email, :password
+    validates_presence_of :email, :password
 
-	def initialize(session, attributes={})
-		@session = session
-		@email = attributes[:email]
-		@password = attributes[:password]
-	end
+    def initialize(session, attributes={})
+        @session = session
+        @email = attributes[:email]
+        @password = attributes[:password]
+    end
 
-	def authenticate!
-		user = User.authenticate(@email, @password)
-		if user.present?
-			store(user)
-		else
-			errors.add(:base, 'Email and/or password is invalid.')
-			false
-		end
-	end
+    def authenticate!
+        user = User.authenticate(@email, @password)
+        if user.present?
+            store(user)
+        else
+            errors.add(:base, 'Email and/or password is invalid.')
+            false
+        end
+    end
 
-	def store(user)
-		@session[:user_id] = user.id
-	end
+    def store(user)
+        @session[:user_id] = user.id
+    end
 
-	def current_user
-		User.find(@session[:user_id])
-	end
+    def current_user
+        User.find(@session[:user_id])
+    end
 
-	def user_signed_in?
-		@session[:user_id].present?
-	end
+    def user_signed_in?
+        @session[:user_id].present?
+    end
 
-	def destroy
-		@session[:user_id] = nil
-	end
+    def has_picture?
+        @user.picture?
+    end
+
+    def destroy
+        @session[:user_id] = nil
+    end
 
 end

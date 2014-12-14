@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
 
 	has_secure_password
 
+	mount_uploader :picture, PictureUploader
+
 	def self.authenticate(email, password)
 		user = User.find_by(email: email).try(:authenticate, password)
 	end
