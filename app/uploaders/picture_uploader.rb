@@ -3,6 +3,7 @@
 class PictureUploader < CarrierWave::Uploader::Base
 
   include CarrierWave::RMagick
+  include Cloudinary::CarrierWave
   # include Sprockets::Helpers::RailsHelper
 
   # Include RMagick or MiniMagick support:
@@ -10,18 +11,24 @@ class PictureUploader < CarrierWave::Uploader::Base
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
+  # storage :file
   # storage :fog
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:
-  def store_dir
-    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
-  end
+  # def store_dir
+  #   "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+  # end
 
   # thumbnail
-  version :thumb do
-    process :resize_to_fill => [100, 100]
+  # version :thumb do
+  #   process :resize_to_fill => [100, 100]
+  # end
+
+  version :thumbnail do
+    eager
+    resize_to_fit(150, 150)
+    cloudinary_transformation :quality => 80          
   end
 
   # informing contacts allowed

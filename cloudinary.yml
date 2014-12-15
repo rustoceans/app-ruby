@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: alexfalcucci
+  api_key: '566357691686394'
+  api_secret: _WHb57oMCxw1_lzwDgf5tBKYFhY
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: alexfalcucci
+  api_key: '566357691686394'
+  api_secret: _WHb57oMCxw1_lzwDgf5tBKYFhY
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: alexfalcucci
+  api_key: '566357691686394'
+  api_secret: _WHb57oMCxw1_lzwDgf5tBKYFhY
+  enhance_image_tag: true
+  static_image_support: false

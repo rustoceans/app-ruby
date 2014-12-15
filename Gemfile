@@ -20,6 +20,9 @@ gem 'carrierwave'
 
 gem 'rmagick'
 
+# cloud images
+gem 'cloudinary'
+
 gem 'bootstrap-sass'
 
 # Use SCSS for stylesheets
