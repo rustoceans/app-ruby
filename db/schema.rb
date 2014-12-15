@@ -11,20 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141215023714) do
+ActiveRecord::Schema.define(version: 20141215155948) do
 
   create_table "post_attachments", force: true do |t|
     t.integer  "post_id"
     t.string   "picture"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
+
+  add_index "post_attachments", ["user_id"], name: "index_post_attachments_on_user_id"
 
   create_table "posts", force: true do |t|
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
+
+  add_index "posts", ["user_id"], name: "index_posts_on_user_id"
 
   create_table "users", force: true do |t|
     t.string   "full_name"

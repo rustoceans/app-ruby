@@ -2,6 +2,9 @@ class User < ActiveRecord::Base
 
 	EMAIL_REGEXP = /\A[^@]+@([^@\.]+\.)+[^@\.]+\z/
 
+	has_many :post_attachments
+	has_many :posts
+
 	validates_presence_of :email, :full_name, :location, :password
 	validates_confirmation_of :password
 	validates_length_of :bio, minimum: 10, allow_blank: false
