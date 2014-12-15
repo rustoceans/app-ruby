@@ -1,3 +1,0 @@
-== App rails
-
-A simple app ruby using Bootstrap and Rails.
