@@ -78,7 +78,7 @@ Rails.application.configure do
 
   # Configuration to Heroku
   config.action_mailer.default_url_options = {
-  host: "app-to-planobe.herokuapp.com"
+  host: "alex-railsapp.herokuapp.com"
   }
 
 

@@ -23,7 +23,7 @@ gem 'rmagick'
 # cloud images
 gem 'cloudinary'
 
-gem 'bootstrap-sass'
+# gem 'bootstrap-sass'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'
