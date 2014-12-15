@@ -17,3 +17,6 @@
 /ImageMagick-6.9.0-0
 ImageMagick-6.9.0-0.tar.gz
 /*.tar.gz
+
+# ignore local images
+/public/uploads/user/picture/
