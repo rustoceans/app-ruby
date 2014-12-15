@@ -51,6 +51,9 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1
   # PATCH/PUT /posts/1.json
   def update
+    # Search just posts that the user have permissions to see
+    # If not found for user
+    @post = current_user.posts.find(params[:id])
     respond_to do |format|
       if @post.update(post_params)
         format.html { redirect_to @post, notice: 'Post was successfully updated.' }
