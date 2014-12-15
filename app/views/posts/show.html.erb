@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<div class="container">
+	<h2>
+	  <strong>Title:</strong>
+	  <%= @post.title %> <br>
+	  <%= link_to 'Back', posts_path, :class => 'btn btn-info' %>
+	</h2>
+	<div class="row">
+		<% @post_attachments.each do |p| %>
+		<div class="col-md-3 col-sm-4 col-xs-6"><br><%= image_tag p.picture_url, :class => 'img-responsive' %><%= link_to "Edit File", edit_post_attachment_path(p), :class => 'btn btn-default' %></div>
+        <% end %>
+    </div>
+</div>

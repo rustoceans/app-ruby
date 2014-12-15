@@ -1,0 +1,27 @@
+<%= image_tag @post_attachment.picture %>
+<%= form_for(@post_attachment) do |f| %>
+  <% if @post_attachment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post_attachment.errors.count, "error") %> prohibited this post_attachment from being saved:</h2>
+
+      <ul>
+      <% @post_attachment.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label 'id' %><br>
+    <%= f.number_field :post_id, :class => 'form-control', :disabled => "disabled" %>
+  </div><br>
+  <div class="field">
+    <%= f.label :picture %><br>
+    <%= f.file_field :picture, :class => 'form-control' %>
+  </div><br>
+  <div class="actions">
+    <%= f.submit 'Upload Image', :class => 'btn btn-success' %>
+    <%= link_to 'Back', post_attachments_path, :class => 'btn btn-default' %>
+  </div>
+<% end %>

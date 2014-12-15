@@ -1,0 +1,48 @@
+<% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+<div class="container">
+  <div class="row">
+        <div class="control-group" id="fields">
+            <label class="control-label" for="field1">Título</label>
+            <div class="controls"> 
+            <%= form_for(@post, :html => { :multipart => true }) do |f| %>
+                    <div class="entry input-group col-xs-3">
+                    <%= f.text_field :title, :class => 'form-control' %>
+                    </div><br>
+                    <label class="control-label" for="field1">Imagem</label>
+                    <%= f.fields_for :post_attachments do |p| %>
+                    <div class="entry input-group col-xs-3">
+                        <%= p.file_field :picture, :class => 'form-control', 
+                                         :multiple => true, name: "post_attachments[picture][]" %>
+                      <span class="input-group-btn">
+                            <button class="btn btn-success btn-add" type="button">
+                                <span class="glyphicon glyphicon-plus"></span>
+                            </button>
+                        </span><br>
+                    </div>
+                    <div id="new">
+                      
+                    </div>
+                    <% end %>
+                    <br>
+                    <small>Press <span class="glyphicon glyphicon-plus gs"></span> to add another form field :)</small><br>
+                    <%= f.submit "Upload!", :class => 'btn btn-sm btn-success' %>
+                    <a href="<%= posts_path %>"><button type="button" class="btn btn-default">See all uploads</button></a>
+
+            <% end %>
+            </div>
+        </div>
+  </div>
+</div>
+
+

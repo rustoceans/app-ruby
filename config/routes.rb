@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :post_attachments
+
+  resources :posts
+
   resources :users
 
   resources :user_sessions, only: [:create, :new, :destroy]

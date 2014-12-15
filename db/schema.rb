@@ -11,11 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141215003314) do
+ActiveRecord::Schema.define(version: 20141215023714) do
 
   create_table "post_attachments", force: true do |t|
     t.integer  "post_id"
-    t.string   "file"
+    t.string   "picture"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -36,5 +36,7 @@ ActiveRecord::Schema.define(version: 20141215003314) do
     t.string   "password_digest"
     t.string   "picture"
   end
+
+  add_index "users", ["email"], name: "index_users_on_email", unique: true
 
 end
