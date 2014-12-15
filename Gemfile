@@ -23,6 +23,8 @@ gem 'rmagick'
 # cloud images
 gem 'cloudinary'
 
+# serve assets
+gem 'rails_12factor', group: :production
 # gem 'bootstrap-sass'
 
 # Use SCSS for stylesheets
