@@ -66,7 +66,7 @@ License
 
 MIT
 
-**Free Software, Hell Yeah!**
+**Free Software**
 
 [Heroku]:https://www.heroku.com
 [book]:http://www.casadocodigo.com.br/products/livro-ruby-on-rails
